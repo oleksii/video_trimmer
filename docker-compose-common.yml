@@ -1,0 +1,13 @@
+version: '2.1'
+services:
+  rubyapp:
+    build: ./video_trimmer
+    environment:
+      RAILS_ENV: development
+      RAILS_LOG_TO_STDOUT: 'true'
+      REDIS_HOST: 'redis'
+      REDIS_PORT: '6379'
+      REDIS_URL: 'redis://redis:6379/1'
+      REDIS_CHANNEL_PREFIX: vt_development
+    volumes:
+      - ${PWD-.}/video_trimmer:/usr/src/app

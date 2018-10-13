@@ -1,0 +1,40 @@
+version: '2.1'
+services:
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - ${PWD-.}/data/mongodb/db:/data/db
+    ports:
+      - '27017:27017'
+
+  redis:
+    image: 'redis:alpine'
+    ports:
+      - '6379'
+
+  trimworker:
+    extends:
+     file: docker-compose-common.yml
+     service: rubyapp
+    command: 'bundle exec sidekiq -q default'
+    environment:
+      - MONGODB_URI=mongo://mongo:27017/vtrimapp_development
+    depends_on:
+      - redis
+      - mongo
+
+  trimapp:
+    extends:
+      file: docker-compose-common.yml
+      service: rubyapp
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    environment:
+      - MONGODB_URI=mongo://mongo:27017/vtrimapp_development
+    ports:
+      - '3000:3000'
+    depends_on:
+      - redis
+      - mongo
