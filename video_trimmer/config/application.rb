@@ -33,4 +33,6 @@ module VideoTrimmer
     config.api_only = true
     config.autoload_paths << Rails.root.join('lib')
   end
+
+  Mongoid.load!(Rails.root.join('config/mongoid.yaml'))
 end

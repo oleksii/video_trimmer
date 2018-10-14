@@ -1,0 +1,17 @@
+{
+  "resources": [
+    {
+      "name": "User",
+      "explanation": "Creating User and receiving an authentication token in the response",
+      "examples": [
+        {
+          "description": "Creating new user",
+          "link": "user/creating_new_user.json",
+          "groups": "all",
+          "route": "/api/users",
+          "method": "post"
+        }
+      ]
+    }
+  ]
+}
