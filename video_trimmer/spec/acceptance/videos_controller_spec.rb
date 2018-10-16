@@ -16,7 +16,9 @@ RSpec.resource 'Video' do
   let(:file)       { Rack::Test::UploadedFile.new(file_path, 'video/mp4', true) }
   let(:file_path)  { Rails.root.join('spec/support/files/dummy_video.mp4') }
 
-  let(:timeline)   { { start_time: '1.5', end_time: '4.6' } }
+  let(:start_time) { '1.5' }
+  let(:end_time)   { '4.6' }
+  let(:timeline)   { { start_time: start_time, end_time: end_time } }
 
   post '/api/videos' do
     parameter :file, 'Video file', required: true
@@ -46,6 +48,28 @@ RSpec.resource 'Video' do
 
         status.should == 422
       end
+    end
+  end
+
+  explanation 'Viewing Video information'
+
+  let(:video) do
+    create(:video,
+      user: user,
+      file: file,
+      trim: { status: :scheduled },
+      timeline: { start_time: '1.3', end_time: '5.3' }
+    )
+  end
+
+  get '/api/videos' do
+
+    before { video }
+
+    example 'Get videos informatin' do
+      do_request
+
+      status.should == 200
     end
   end
 end

@@ -37,6 +37,13 @@
           "groups": "all",
           "route": "/api/videos",
           "method": "post"
+        },
+        {
+          "description": "Get videos informatin",
+          "link": "video/get_videos_informatin.json",
+          "groups": "all",
+          "route": "/api/videos",
+          "method": "get"
         }
       ]
     }

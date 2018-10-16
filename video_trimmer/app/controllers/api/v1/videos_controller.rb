@@ -1,14 +1,18 @@
 class Api::V1::VideosController < Api::V1::ApplicationController
   before_action :authenticate_request
 
-  def create
-    @video = current_user.videos.new(video_params)
-    @video.build_trim
+  def index
+    @videos = current_user.videos
+  end
 
-    if @video.save
-      render json: { status: @video.trim.status }, status: :created
+  def create
+    video = current_user.videos.new(video_params)
+    video.build_trim
+
+    if video.save
+      render json: { status: video.trim.status }, status: :created
     else
-      render json: { error: @video.errors.messages }, status: :unprocessable_entity
+      render json: { error: video.errors.messages }, status: :unprocessable_entity
     end
   end
 
