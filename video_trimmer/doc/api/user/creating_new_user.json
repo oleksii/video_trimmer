@@ -15,7 +15,7 @@
     {
       "request_method": "POST",
       "request_path": "/api/users",
-      "request_body": null,
+      "request_body": "{}",
       "request_headers": {
         "Content-Type": "application/json",
         "Accept": "application/vnd.example.v1"
@@ -25,12 +25,12 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJjMzYzMjMwNjcyYjMwMWFiMTJhNGMwIn0.LhhSvMCpyl5LCNXkURcO94pUeOmH-fJ1koya-mZCM9o\"\n}",
+      "response_body": "{\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJjNTk2OWJlYTczMWQwNjExZDE4MzQwIn0.MnT3TkElGcIZHCkYbr6_N8f3zOnv4OYbxLgEtHLnDus\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost/api/users\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Accept: application/vnd.example.v1\""
+      "curl": "curl \"http://localhost/api/users\" -d '{}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Accept: application/vnd.example.v1\""
     }
   ]
 }

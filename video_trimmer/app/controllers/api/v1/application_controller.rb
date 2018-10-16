@@ -1,21 +1,17 @@
-module Api
-  module V1
-    class ApplicationController < ActionController::API
-      before_action :authenticate_request
+class Api::V1::ApplicationController < ActionController::API
+  before_action :authenticate_request
 
-      attr_reader :current_user
+  attr_reader :current_user
 
-      private
+  private
 
-      def authenticate_request
-        command = ::ApiRequestAuthorizer.call(request.headers)
+  def authenticate_request
+    command = ::ApiRequestAuthorizer.call(request.headers)
 
-        if command.success?
-          @current_user = command.result
-        else
-          render json: { error: command.errors }, status: :unauthorized
-        end
-      end
+    if command.success?
+      @current_user = command.result
+    else
+      render json: { error: command.errors }, status: :unauthorized
     end
   end
 end

@@ -12,6 +12,33 @@
           "method": "post"
         }
       ]
+    },
+    {
+      "name": "Video",
+      "explanation": "Creating Video and receiving the status of trimming in the response",
+      "examples": [
+        {
+          "description": "Creating new video",
+          "link": "video/creating_new_video.json",
+          "groups": "all",
+          "route": "/api/videos",
+          "method": "post"
+        },
+        {
+          "description": "Creating new video without file",
+          "link": "video/creating_new_video_without_file.json",
+          "groups": "all",
+          "route": "/api/videos",
+          "method": "post"
+        },
+        {
+          "description": "Creating new video without timeline",
+          "link": "video/creating_new_video_without_timeline.json",
+          "groups": "all",
+          "route": "/api/videos",
+          "method": "post"
+        }
+      ]
     }
   ]
 }

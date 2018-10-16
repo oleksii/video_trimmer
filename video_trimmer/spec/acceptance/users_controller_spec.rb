@@ -8,6 +8,8 @@ RSpec.resource 'User' do
   header 'Accept', 'application/vnd.example.v1'
 
   post '/api/users' do
+    let(:raw_post) { params.to_json }
+
     example 'Creating new user' do
       do_request
 
