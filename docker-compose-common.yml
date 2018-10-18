@@ -3,12 +3,13 @@ services:
   rubyapp:
     build: ./video_trimmer
     environment:
-      RAILS_ENV: development
+      APP_HOST: 'http://localhost:3000'
+      RAILS_ENV: 'development'
       RAILS_KEY: 'f62e52584f7c15157c9821e57e3fd9a3d93e86e263b4b276b0c7edfb2cf340a3b367a6dc7766dfc3c6c07c07898fb1c79f43d5c8d8c0f5dae4ffbacbe01fee6d'
       RAILS_LOG_TO_STDOUT: 'true'
       REDIS_HOST: 'redis'
       REDIS_PORT: '6379'
       REDIS_URL: 'redis://redis:6379/1'
-      REDIS_CHANNEL_PREFIX: vt_development
+      REDIS_CHANNEL_PREFIX: 'vt_development'
     volumes:
       - ${PWD-.}/video_trimmer:/usr/src/app

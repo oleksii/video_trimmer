@@ -37,8 +37,10 @@ RSpec.resource 'Video' do
     end
 
     context 'with invalid params' do
+      let(:invalid_file) { Rack::Test::UploadedFile.new(Tempfile.new.to_path, 'video/mp4', true) }
+
       example 'Creating new video without file' do
-        do_request({ file: nil, timeline: timeline })
+        do_request({ file: invalid_file, timeline: timeline })
 
         status.should == 422
       end

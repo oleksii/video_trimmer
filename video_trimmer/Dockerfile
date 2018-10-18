@@ -1,6 +1,6 @@
 FROM ruby:2.5.1-alpine
 
-ENV DEV_PACKAGES="build-base tzdata g++ musl-dev make nodejs postgresql-dev postgresql-client curl imagemagick netcat-openbsd bash vim"
+ENV DEV_PACKAGES="build-base tzdata g++ musl-dev make nodejs postgresql-dev postgresql-client curl netcat-openbsd bash vim ffmpeg"
 RUN apk --update --upgrade add $DEV_PACKAGES \
     && rm /var/cache/apk/*
 

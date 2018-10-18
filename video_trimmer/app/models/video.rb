@@ -11,5 +11,5 @@ class Video
   embeds_one :trim
 
   validates_presence_of :file
-  validates_with TimelineValidator
+  validates_with VideoTimelineValidator
 end
