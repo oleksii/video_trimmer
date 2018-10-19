@@ -2,7 +2,6 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 RSpec.resource 'User' do
-  explanation 'Creating User and receiving an authentication token in the response'
 
   header 'Content-Type', 'application/json'
   header 'Accept', 'application/vnd.example.v1'

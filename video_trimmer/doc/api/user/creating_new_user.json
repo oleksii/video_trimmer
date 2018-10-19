@@ -1,6 +1,6 @@
 {
   "resource": "User",
-  "resource_explanation": "Creating User and receiving an authentication token in the response",
+  "resource_explanation": null,
   "http_method": "POST",
   "route": "/api/users",
   "description": "Creating new user",
@@ -25,7 +25,7 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJjNWM2N2EyY2FjYmMwMDljZmE5MDY2In0.3H9xljN9Z7hmDRjyCulKis_Yn-1XY6-D1YLjE6x7Xgw\"\n}",
+      "response_body": "{\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJjOTM2NWQ3ZjFiMTYwMDdkMjhmMjM1In0.Cj8938AdpidFOyPo684Ra-xtB7fUBKFu6mnx8wZWZr0\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },

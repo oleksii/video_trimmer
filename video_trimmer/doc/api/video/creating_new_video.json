@@ -1,6 +1,6 @@
 {
   "resource": "Video",
-  "resource_explanation": "Creating Video and receiving the status of trimming in the response",
+  "resource_explanation": null,
   "http_method": "POST",
   "route": "/api/videos",
   "description": "Creating new video",

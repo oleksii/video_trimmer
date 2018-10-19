@@ -1,9 +1,9 @@
 {
   "resource": "Video",
-  "resource_explanation": "Creating Video and receiving the status of trimming in the response",
+  "resource_explanation": null,
   "http_method": "GET",
   "route": "/api/videos",
-  "description": "Get videos informatin",
+  "description": "Getting videos information",
   "explanation": null,
   "parameters": [
 
@@ -26,7 +26,7 @@
       "request_content_type": "multipart/form-data",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[\n  {\n    \"id\": {\n      \"$oid\": \"5bc5c67c2cacbc009cfa9071\"\n    },\n    \"duration\": null,\n    \"status\": \"processing\"\n  }\n]",
+      "response_body": "[\n  {\n    \"id\": {\n      \"$oid\": \"5bc9365e7f1b16007d28f240\"\n    },\n    \"duration\": \"29.4\",\n    \"status\": \"done\",\n    \"url\": \"http://localhost:3000/attachments/eyJpZCI6ImQxZWYyNGYyMDBlOWE5ZTQ2NWVmMmFhNjI2MzE1MWFiLm1wNCIsInN0b3JhZ2UiOiJjYWNoZSIsIm1ldGFkYXRhIjp7ImZpbGVuYW1lIjoiZHVtbXlfdmlkZW8ubXA0IiwibWltZV90eXBlIjoiYXBwbGljYXRpb24vbXA0Iiwic2l6ZSI6MTA0OTg2Nzd9fQ==\"\n  }\n]",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },

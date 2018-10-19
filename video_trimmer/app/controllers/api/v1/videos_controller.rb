@@ -16,6 +16,22 @@ class Api::V1::VideosController < Api::V1::ApplicationController
     end
   end
 
+  def restart
+    if params[:id].blank?
+      render json: { error: 'id required' }, status: :bad_request# and return
+
+    elsif video = current_user.videos.where(id: params[:id]).last
+      video.trim.update(status: Trim.statuses.hash['scheduled'])
+
+      video.file_attacher._promote(action: :store)
+
+      render json: { status: video.trim.status }, status: :accepted
+    else
+
+      render json: { error: 'wrong id' }, status: :bad_request
+    end
+  end
+
   private
 
   def video_params

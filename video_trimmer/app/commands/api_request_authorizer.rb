@@ -14,13 +14,15 @@ class ApiRequestAuthorizer
   def fetch_user
     decoded_auth_token ||= JsonWebToken.decode(@auth_header)
 
-    return User.find(decoded_auth_token[:user_id]) if decoded_auth_token
+    user = User.find(decoded_auth_token[:user_id]) if decoded_auth_token
+
+    return user if user
 
     errors.add(:token, 'Invalid token') && nil
   end
 
   def fetch_auth_header(headers)
-    return headers['Authorization'].split(' ').last if headers['Authorization']
+    return headers['Authorization'] if headers['Authorization']
 
     errors.add(:token, 'Missing token') && nil
   end

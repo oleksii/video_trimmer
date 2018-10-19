@@ -2,7 +2,7 @@
   "resources": [
     {
       "name": "User",
-      "explanation": "Creating User and receiving an authentication token in the response",
+      "explanation": null,
       "examples": [
         {
           "description": "Creating new user",
@@ -15,7 +15,7 @@
     },
     {
       "name": "Video",
-      "explanation": "Creating Video and receiving the status of trimming in the response",
+      "explanation": null,
       "examples": [
         {
           "description": "Creating new video",
@@ -25,25 +25,18 @@
           "method": "post"
         },
         {
-          "description": "Creating new video without file",
-          "link": "video/creating_new_video_without_file.json",
-          "groups": "all",
-          "route": "/api/videos",
-          "method": "post"
-        },
-        {
-          "description": "Creating new video without timeline",
-          "link": "video/creating_new_video_without_timeline.json",
-          "groups": "all",
-          "route": "/api/videos",
-          "method": "post"
-        },
-        {
-          "description": "Get videos informatin",
-          "link": "video/get_videos_informatin.json",
+          "description": "Getting videos information",
+          "link": "video/getting_videos_information.json",
           "groups": "all",
           "route": "/api/videos",
           "method": "get"
+        },
+        {
+          "description": "Restarting failed Video trimming",
+          "link": "video/restarting_failed_video_trimming.json",
+          "groups": "all",
+          "route": "/api/videos/restart",
+          "method": "patch"
         }
       ]
     }
